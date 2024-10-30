@@ -128,8 +128,6 @@ class WebTextExtractor:
                     continue
                 print(url)
                 text = extract_text(self.session, url)
-                if "&amp;" in text:
-                    print("&amp; : " + str(text.count("&amp;")))
                 name = generate_output_name(index, url)
                 with open(self.output_path / name, "w") as output:
                     output.write(text)
